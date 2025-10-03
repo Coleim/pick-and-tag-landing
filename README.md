@@ -67,10 +67,9 @@ Une landing page moderne et responsive pour l'application "Pick and Tag", une ap
 
 ## 📦 Scripts disponibles
 
-- `npm start` - Lance le serveur de développement
-- `npm build` - Construit l'application pour la production
-- `npm test` - Lance les tests
-- `npm eject` - Éjecte la configuration (irréversible)
+- `npm run start` - Lance le serveur de développement
+- `npm run build` - Construit l'application pour la production
+- `npm run test` - Lance les tests
 
 ## 🌐 Déploiement
 

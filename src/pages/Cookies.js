@@ -140,7 +140,7 @@ const Cookies = () => {
               Pour toute question concernant notre utilisation des cookies :
             </p>
             <p>
-              <strong>Email :</strong> cookies@pickandtag.app<br />
+              <strong>Email :</strong> pickandtag.app+cookies@gmail.com<br />
               <strong>Adresse :</strong> [Votre adresse]
             </p>
           </section>

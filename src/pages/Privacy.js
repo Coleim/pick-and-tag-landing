@@ -12,88 +12,89 @@ const Privacy = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>Politique de Confidentialité</h1>
-          <p className="last-updated">Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}</p>
+          <h1>Politique de Confidentialité – Pick and Tag</h1>
+          <p className="last-updated">Dernière mise à jour : 02/10/2025</p>
 
           <section>
-            <h2>1. Collecte des informations</h2>
+            <h2>Introduction</h2>
             <p>
-              Pick and Tag collecte les informations suivantes lorsque vous utilisez notre application :
+              Cette politique de confidentialité explique comment <strong>Pick and Tag</strong> collecte, utilise et protège vos données lors de l'utilisation de notre application. En utilisant Pick and Tag, vous acceptez les pratiques décrites ci-dessous.
             </p>
-            <ul>
-              <li><strong>Informations d'inscription :</strong> Adresse email, nom d'utilisateur</li>
-              <li><strong>Données d'utilisation :</strong> Statistiques de collecte, localisation (avec votre consentement)</li>
-              <li><strong>Données techniques :</strong> Type d'appareil, version de l'application</li>
-            </ul>
           </section>
 
           <section>
-            <h2>2. Utilisation des données</h2>
-            <p>Nous utilisons vos données pour :</p>
+            <h2>1. Données collectées</h2>
+            <p>Lorsque vous utilisez Pick and Tag, nous pouvons collecter :</p>
             <ul>
-              <li>Fournir et améliorer nos services</li>
-              <li>Calculer votre impact environnemental</li>
-              <li>Maintenir le classement et les défis</li>
-              <li>Vous envoyer des notifications importantes</li>
-              <li>Analyser l'utilisation de l'application</li>
+              <li><strong>Images envoyées par les utilisateurs</strong> : photos des déchets soumises pour catégorisation et validation.</li>
+              <li><strong>Géolocalisation précise</strong> : position GPS associée à vos photos afin de placer un tag sur la carte collective.</li>
+              <li><strong>Métadonnées minimales</strong> : horodatage (date et heure) et identifiant utilisateur associé à l'image.</li>
+              <li><strong>Informations de compte</strong> : adresse e-mail, pseudonyme et données nécessaires à l’authentification.</li>
+            </ul>
+            <p>
+              La collecte de votre localisation n’a lieu qu’avec votre consentement explicite et peut être désactivée dans les réglages de votre appareil.
+            </p>
+          </section>
+
+          <section>
+            <h2>2. Finalités de la collecte</h2>
+            <p>Les données collectées sont utilisées pour :</p>
+            <ul>
+              <li>Permettre la <strong>validation communautaire</strong> des déchets (autres utilisateurs vérifient la bonne catégorisation).</li>
+              <li>Attribuer et contrôler les <strong>points / XP</strong> gagnés par les utilisateurs.</li>
+              <li>Placer des <strong>tags géolocalisés</strong> sur la carte collective, afin de visualiser et suivre les zones d’action.</li>
+              <li>Améliorer les algorithmes de détection et de catégorisation des déchets.</li>
             </ul>
           </section>
 
           <section>
             <h2>3. Partage des données</h2>
-            <p>
-              Nous ne vendons jamais vos données personnelles. Nous pouvons partager vos informations uniquement dans les cas suivants :
-            </p>
+            <p>Nous ne revendons pas vos données. Les partages possibles :</p>
             <ul>
-              <li>Avec votre consentement explicite</li>
-              <li>Pour respecter une obligation légale</li>
-              <li>Avec des prestataires de services tiers (sous contrat de confidentialité)</li>
+              <li><strong>Validation communautaire</strong> : vos photos et leur position peuvent être affichées à d'autres utilisateurs pour vérification et contribution à la carte.</li>
+              <li><strong>Prestataires techniques</strong> : hébergement, stockage, services d'analyse et de sécurité (sous contrat et respectant la confidentialité).</li>
+              <li><strong>Obligations légales</strong> : transmission si la loi l'exige ou pour répondre à une demande judiciaire.</li>
             </ul>
           </section>
 
           <section>
-            <h2>4. Sécurité</h2>
-            <p>
-              Nous mettons en place des mesures de sécurité appropriées pour protéger vos données contre l'accès non autorisé, la modification, la divulgation ou la destruction.
-            </p>
-          </section>
-
-          <section>
-            <h2>5. Vos droits</h2>
-            <p>Conformément au RGPD, vous avez le droit de :</p>
+            <h2>4. Durée de conservation</h2>
             <ul>
-              <li>Accéder à vos données personnelles</li>
-              <li>Rectifier des données inexactes</li>
-              <li>Supprimer vos données</li>
-              <li>Limiter le traitement de vos données</li>
-              <li>Portabilité de vos données</li>
-              <li>Vous opposer au traitement</li>
+              <li>Les images et données de localisation sont conservées le temps nécessaire à leur validation et affichage sur la carte.</li>
+              <li>Une fois validées, elles peuvent être <strong>anonymisées</strong> et conservées à des fins statistiques ou de recherche.</li>
+              <li>Vous pouvez demander la suppression de vos données personnelles à tout moment (voir section Contact).</li>
             </ul>
           </section>
 
           <section>
-            <h2>6. Cookies et technologies similaires</h2>
+            <h2>5. Sécurité</h2>
             <p>
-              Notre application peut utiliser des cookies et technologies similaires pour améliorer votre expérience. Vous pouvez gérer ces préférences dans les paramètres de votre appareil.
+              Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre :
             </p>
+            <ul>
+              <li>l'accès non autorisé,</li>
+              <li>la divulgation,</li>
+              <li>la perte ou la modification accidentelle.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>6. Vos droits</h2>
+            <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+            <ul>
+              <li><strong>Accès</strong> : obtenir une copie des données que nous détenons sur vous.</li>
+              <li><strong>Rectification</strong> : corriger des données inexactes ou incomplètes.</li>
+              <li><strong>Suppression</strong> : demander l'effacement de vos données.</li>
+              <li><strong>Opposition</strong> : vous opposer à certains traitements.</li>
+              <li><strong>Portabilité</strong> : récupérer vos données dans un format lisible par machine.</li>
+            </ul>
           </section>
 
           <section>
             <h2>7. Contact</h2>
-            <p>
-              Pour toute question concernant cette politique de confidentialité, contactez-nous à :
-            </p>
-            <p>
-              <strong>Email :</strong> privacy@pickandtag.app<br />
-              <strong>Adresse :</strong> [Votre adresse]
-            </p>
-          </section>
-
-          <section>
-            <h2>8. Modifications</h2>
-            <p>
-              Nous nous réservons le droit de modifier cette politique de confidentialité. Les modifications importantes vous seront notifiées par email ou via l'application.
-            </p>
+            <p>Pour toute question, demande d'accès, rectification ou suppression, contactez :</p>
+            <p><strong>Email :</strong> pickandtag.app+privacy@gmail.com</p>
+            <p>© <strong>Pick and Tag</strong> — Tous droits réservés.</p>
           </section>
         </motion.div>
       </div>

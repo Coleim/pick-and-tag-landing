@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
+import MarketingCarousel from './components/MarketingCarousel';
 import Leaderboard from './components/Leaderboard';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
+import FAQ from './pages/FAQ';
+import Help from './pages/Help';
 import './App.css';
 
 function HomePage() {
@@ -18,6 +21,7 @@ function HomePage() {
       <main>
         <Hero />
         <HowItWorks />
+        <MarketingCarousel />
         <Leaderboard />
         <Contact />
       </main>
@@ -57,6 +61,16 @@ function App() {
           <Route path="/cookies" element={
             <LegalPage>
               <Cookies />
+            </LegalPage>
+          } />
+          <Route path="/faq" element={
+            <LegalPage>
+              <FAQ />
+            </LegalPage>
+          } />
+          <Route path="/help" element={
+            <LegalPage>
+              <Help />
             </LegalPage>
           } />
         </Routes>

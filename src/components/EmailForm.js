@@ -2,128 +2,63 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './EmailForm.css';
 
-const EmailForm = ({ onEmailSubmit }) => {
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [platform, setPlatform] = useState('android');
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mwprbapq';
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+const EmailForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-
-    if (!email) {
-      setError('Veuillez saisir votre adresse email');
-      return;
-    }
-
-    if (!validateEmail(email)) {
-      setError('Veuillez saisir une adresse email valide');
-      return;
-    }
-
-    if (platform !== 'android') {
-      setError('La bêta est actuellement disponible uniquement sur Android');
-      return;
-    }
-
     setIsLoading(true);
-
     try {
-      // Utilisation de Formspree pour la collecte d'emails
-      const response = await fetch('https://formspree.io/f/YOUR_BETA_FORM_ID', {
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          email, 
-          platform,
-          type: 'beta_signup',
-          message: `Inscription à la bêta ${platform}`
-        })
+        headers: { Accept: 'application/json' },
+        body: data,
       });
-
-      if (response.ok) {
-        onEmailSubmit(true);
-        setEmail('');
-        setPlatform('android');
-      } else {
-        throw new Error('Erreur lors de l\'inscription');
+      if (res.ok) {
+        setSubmitted(true);
       }
-    } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
     } finally {
       setIsLoading(false);
     }
   };
 
+  if (submitted) {
+    return (
+      <motion.div
+        className="email-form"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <p className="success-message">Merci ! Nous vous recontactons très vite.</p>
+      </motion.div>
+    );
+  }
+
   return (
-    <motion.form 
+    <motion.form
       className="email-form"
       onSubmit={handleSubmit}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
+      <input type="hidden" name="subject" value="I want to join the beta" />
       <div className="form-group">
         <input
           type="email"
-          className={`input ${error ? 'error' : ''}`}
+          name="email"
+          className="input"
           placeholder="Votre adresse email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          required
           disabled={isLoading}
         />
       </div>
-
-      <div className="platform-selector">
-        <label className="platform-label">
-          <input
-            type="radio"
-            name="platform"
-            value="android"
-            checked={platform === 'android'}
-            onChange={(e) => setPlatform(e.target.value)}
-            disabled={isLoading}
-          />
-          <span className="platform-option android">
-            <span className="platform-icon">🤖</span>
-            Android
-          </span>
-        </label>
-        
-        <label className="platform-label">
-          <input
-            type="radio"
-            name="platform"
-            value="ios"
-            checked={platform === 'ios'}
-            onChange={(e) => setPlatform(e.target.value)}
-            disabled={isLoading}
-          />
-          <span className="platform-option ios">
-            <span className="platform-icon">🍎</span>
-            iOS
-          </span>
-        </label>
-      </div>
-
-      {error && (
-        <motion.div 
-          className="error-message"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {error}
-        </motion.div>
-      )}
 
       <motion.button
         type="submit"
@@ -131,22 +66,10 @@ const EmailForm = ({ onEmailSubmit }) => {
         disabled={isLoading}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        transition={{ type: 'spring', stiffness: 300 }}
       >
-        {isLoading ? (
-          <>
-            <span className="spinner"></span>
-            Inscription en cours...
-          </>
-        ) : (
-          'Rejoindre la bêta'
-        )}
+        {isLoading ? 'Envoi…' : 'Envoyer'}
       </motion.button>
-
-      <p className="form-note">
-        📱 <strong>Android uniquement</strong> pour le moment. 
-        Un email de confirmation vous sera envoyé.
-      </p>
     </motion.form>
   );
 };

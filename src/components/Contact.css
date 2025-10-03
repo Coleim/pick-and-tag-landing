@@ -28,10 +28,8 @@
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
-  align-items: start;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-info {
@@ -76,6 +74,8 @@
 }
 
 .contact-form-container {
+  margin-right: auto;
+  margin-left: auto;
   background: var(--white);
   border-radius: 20px;
   padding: 40px;
@@ -182,10 +182,6 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
   
   .contact-info {
     flex-direction: row;
@@ -214,11 +210,7 @@
   .section-subtitle {
     font-size: 16px;
   }
-  
-  .contact-content {
-    gap: 40px;
-  }
-  
+    
   .contact-info {
     flex-direction: column;
     gap: 20px;

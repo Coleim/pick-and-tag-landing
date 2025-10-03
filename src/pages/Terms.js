@@ -112,7 +112,7 @@ const Terms = () => {
               Pour toute question concernant ces conditions d'utilisation :
             </p>
             <p>
-              <strong>Email :</strong> legal@pickandtag.app<br />
+              <strong>Email :</strong> pickandtag.app+legal@gmail.com<br />
               <strong>Adresse :</strong> [Votre adresse]
             </p>
           </section>

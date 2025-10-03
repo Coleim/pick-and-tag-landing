@@ -27,7 +27,7 @@ const Contact = () => {
 
     try {
       // Utilisation de Formspree (service gratuit)
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mwprbapq', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,32 +65,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="contact-content">
-          <motion.div
-            className="contact-info"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="info-card">
-              <div className="info-icon">📧</div>
-              <h3>Email</h3>
-              <p>contact@pickandtag.app</p>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">💬</div>
-              <h3>Support</h3>
-              <p>Réponse sous 24h</p>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">🚀</div>
-              <h3>Bêta</h3>
-              <p>Rejoignez l'aventure dès maintenant</p>
-            </div>
-          </motion.div>
-
           <motion.div
             className="contact-form-container"
             initial={{ opacity: 0, x: 30 }}
@@ -157,11 +131,11 @@ const Contact = () => {
                     className="input"
                   >
                     <option value="">Sélectionnez un sujet</option>
-                    <option value="beta">Rejoindre la bêta</option>
-                    <option value="bug">Signaler un bug</option>
-                    <option value="feature">Suggestion de fonctionnalité</option>
-                    <option value="partnership">Partenariat</option>
-                    <option value="other">Autre</option>
+                    <option value="Contact::Rejoindre la bêta">Rejoindre la bêta</option>
+                    <option value="Contact::Signaler un bug">Signaler un bug</option>
+                    <option value="Contact::Suggestion de fonctionnalité">Suggestion de fonctionnalité</option>
+                    <option value="Contact::Partenariat">Partenariat</option>
+                    <option value="Contact::Autre">Autre</option>
                   </select>
                 </div>
 

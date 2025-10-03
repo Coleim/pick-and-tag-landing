@@ -37,9 +37,9 @@ const Footer = () => {
               <div className="footer-column">
                 <h4 className="footer-title">Application</h4>
                 <ul className="footer-list">
-                  <li><a href="#how-it-works">Comment ça marche</a></li>
-                  <li><a href="#leaderboard">Classement</a></li>
-                  <li><a href="#beta">Rejoindre la bêta</a></li>
+                  <li><a href="/#how-it-works">Comment ça marche</a></li>
+                  <li><a href="/#leaderboard">Classement</a></li>
+                  <li><a href="/#beta">Rejoindre la bêta</a></li>
                 </ul>
               </div>
 
@@ -47,8 +47,8 @@ const Footer = () => {
                 <h4 className="footer-title">Support</h4>
                 <ul className="footer-list">
                   <li><a href="#contact">Contact</a></li>
-                  <li><a href="#faq">FAQ</a></li>
-                  <li><a href="#help">Aide</a></li>
+                  <li><a href="/faq">FAQ</a></li>
+                  <li><a href="/help">Aide</a></li>
                 </ul>
               </div>
 
@@ -68,7 +68,7 @@ const Footer = () => {
               <p>&copy; {currentYear} Pick and Tag. Tous droits réservés.</p>
             </div>
             
-            <div className="footer-social">
+            {/* <div className="footer-social">
               <a href="#" className="social-link" aria-label="Twitter">
                 <span>🐦</span>
               </a>
@@ -78,7 +78,7 @@ const Footer = () => {
               <a href="#" className="social-link" aria-label="LinkedIn">
                 <span>💼</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>

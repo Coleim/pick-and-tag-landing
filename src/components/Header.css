@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
+.logo-link {
+  text-decoration: none;
+}
+
 .logo-icon {
   display: flex;
   align-items: center;
