@@ -48,13 +48,14 @@ const EmailForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
+      <p className="inline-warning">Utilisez l'adresse liée à votre compte Android (Google Play).</p>
       <input type="hidden" name="subject" value="I want to join the beta" />
       <div className="form-group">
         <input
           type="email"
           name="email"
           className="input"
-          placeholder="Votre adresse email"
+          placeholder="Adresse email de votre compte Android"
           required
           disabled={isLoading}
         />
